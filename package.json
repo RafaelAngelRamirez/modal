@@ -33,5 +33,13 @@
   },
   "np": {
     "contents": "./dist/modal"
-  }
+  },
+
+  "module": "dist/modal/fesm2015/codice-progressio-modal.js",
+  "es2015": "dist/modal/fesm2015/codice-progressio-modal.js",
+  "esm2015": "dist/modal/esm2015/codice-progressio-modal.js",
+  "fesm2015": "dist/modal/fesm2015/codice-progressio-modal.js",
+  "typings": "dist/modal/codice-progressio-modal.d.ts",
+  "metadata": "dist/modal/codice-progressio-modal.metadata.json",
+  "sideEffects": false
 }
