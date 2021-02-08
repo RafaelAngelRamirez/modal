@@ -7,5 +7,27 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.11.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelAngelRamirez/modal.git"
+  },
+  "keywords": [
+    "modal",
+    "angular"
+  ],
+  "author": "Rafael Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelAngelRamirez/modal/issues"
+  },
+  "homepage": "https://github.com/RafaelAngelRamirez/modal#readme",
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,24 +1,53 @@
 # Modal
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.11.
+Modal limpio y sencillo para Angular. 
 
-## Code scaffolding
+>Requiere los estilos de bootstrap 4 o 5 para funcionar. 
 
-Run `ng generate component component-name --project modal` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project modal`.
-> Note: Don't forget to add `--project modal` or else it will be added to the default project in your `angular.json` file. 
+### Instalación
 
-## Build
+>`npm i @codice-progressio/modal`
 
-Run `ng build modal` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+### Uso
 
-After building your library with `ng build modal`, go to the dist folder `cd dist/modal` and run `npm publish`.
+Agrega el modal en el modulo más alto que lo necesites. 
 
-## Running unit tests
+ 
+``` javascript
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, ModalModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
 
-Run `ng test modal` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Further help
+Llama al componente desde donde quieras definiendo su id. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```javascript 
+
+<codice-modal [id]="'unId'" (cerrado)="modalCerrado()">
+  <h1>Funciona!</h1>
+</codice-modal>
+
+
+```
+
+Para llamarlo solo inyecta el servicio `ModalService` en tu componente. 
+
+```javascript 
+
+idIdDelModal:string ="esteIdNoSeDebeRepetir"
+constructor(private modalService: ModalService ){}
+
+```
+
+Y ejecuta `modalService.open(elIdDelModal)`.
+
+
+Para cerrarlo ejecuta `modalService.close(idIdDelModal)`
+
+
