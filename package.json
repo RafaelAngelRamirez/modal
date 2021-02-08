@@ -11,7 +11,8 @@
   "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.11.",
   "main": "karma.conf.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "prepublish":"ng build --prod"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,9 @@
   "homepage": "https://github.com/RafaelAngelRamirez/modal#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+
+  "np": {
+		"contents": "dist/modal"
+	}
 }
