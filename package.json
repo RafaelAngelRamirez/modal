@@ -12,7 +12,7 @@
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "prepublish":"ng build --prod"
+    "publicar":"ng build --prod && np"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,6 @@
   },
 
   "np": {
-		"contents": "dist/modal"
+		"contents": "../dist/modal"
 	}
 }
