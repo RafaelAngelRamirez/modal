@@ -32,6 +32,6 @@
     "access": "public"
   },
   "np": {
-    "contents": "../dist/modal/src"
+    "contents": "./dist/modal"
   }
 }
