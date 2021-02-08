@@ -2,7 +2,8 @@
 
 Modal limpio y sencillo para Angular. 
 
->Requiere los estilos de bootstrap 4 o 5 para funcionar. 
+>Requiere los estilos de bootstrap 4 o 5 para funcionar y para los iconos
+>utiliza fontawesome
 
 ### Instalación
 
