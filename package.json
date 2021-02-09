@@ -28,8 +28,7 @@
     "url": "https://github.com/RafaelAngelRamirez/modal/issues"
   },
   "homepage": "https://github.com/RafaelAngelRamirez/modal#readme",
-  "publishConfig": {
-  },
+  "publishConfig": {},
   "np": {
     "access": "public",
     "contents": "./dist"
