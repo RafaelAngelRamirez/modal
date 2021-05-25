@@ -28,7 +28,7 @@ export class AppModule {}
 
 Llama al componente desde donde quieras definiendo su id. 
 
-```javascript 
+```html 
 
 <codice-modal [id]="'unId'" (cerrado)="modalCerrado()">
   <h1>Funciona!</h1>
