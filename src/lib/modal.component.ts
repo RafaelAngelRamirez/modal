@@ -7,23 +7,24 @@ import {
   OnDestroy,
   Output,
   EventEmitter,
-  Renderer2
-} from '@angular/core'
+  Renderer2,
+} from "@angular/core"
 
-import { ModalService } from './modal.service'
+import { ModalService } from "./modal.service"
 
 @Component({
-  selector: 'codice-modal',
-  templateUrl: 'modal.component.html',
-  styleUrls: ['modal.component.less'],
-  encapsulation: ViewEncapsulation.None
+  selector: "codice-modal",
+  templateUrl: "modal.component.html",
+  styleUrls: ["modal.component.less"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ModalComponent implements OnInit, OnDestroy {
   // Tomado de https://jasonwatmore.com/post/2020/09/24/angular-10-custom-modal-window-dialog-box#:~:text=To%20make%20the%20modal%20component,imports%20array%20on%20line%2016%20.
 
-  @Input() id: string = ''
+  @Input() id: string = ""
   @Output() cerrado = new EventEmitter<null>()
-
+  @Output() abierto = new EventEmitter<null>()
+  @Input() permitirCierreManual = true
   private element: any
 
   constructor(
@@ -37,7 +38,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // ensure id attribute exists
     if (!this.id) {
-      console.error('El modal debe tener un id')
+      console.error("El modal debe tener un id")
       return
     }
 
@@ -47,9 +48,9 @@ export class ModalComponent implements OnInit, OnDestroy {
     // document.body.appendChild(this.element)
 
     // // close modal on background click
-    this.renderer.listen(this.element, 'click', el => {
-      if (el.target.className === 'codice-modal') {
-        this.close()
+    this.renderer.listen(this.element, "click", el => {
+      if (el.target.className === "codice-modal") {
+        this.closeManual()
       }
     })
     // this.element.addEventListener('click', el => {
@@ -70,14 +71,19 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   // open modal
   open(): void {
-    this.element.style.display = 'block'
-    document.body.classList.add('codice-modal-open')
+    this.element.style.display = "block"
+    document.body.classList.add("codice-modal-open")
+    this.abierto.next()
+  }
+
+  closeManual() {
+    if (this.permitirCierreManual) this.close()
   }
 
   // close modal
   close(): void {
-    this.element.style.display = 'none'
-    document.body.classList.remove('codice-modal-open')
+    this.element.style.display = "none"
+    document.body.classList.remove("codice-modal-open")
     this.cerrado.next()
   }
 }
