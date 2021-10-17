@@ -1,21 +1,19 @@
 # Modal
 
-Modal limpio y sencillo para Angular. 
+Modal limpio y sencillo para Angular.
 
->Requiere los estilos de bootstrap 4 o 5 para funcionar y para los iconos
->utiliza fontawesome
+> Requiere los estilos de bootstrap 4 o 5 para funcionar y para los iconos
+> utiliza fontawesome
 
 ### Instalación
 
->`npm i @codice-progressio/modal`
-
+> `npm i @codice-progressio/modal`
 
 ### Uso
 
-Agrega el modal en el modulo más alto que lo necesites. 
+Agrega el modal en el modulo más alto que lo necesites.
 
- 
-``` javascript
+```javascript
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, FormsModule, ModalModule],
@@ -23,23 +21,19 @@ Agrega el modal en el modulo más alto que lo necesites.
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
 ```
 
-Llama al componente desde donde quieras definiendo su id. 
+Llama al componente desde donde quieras definiendo su id.
 
-```html 
-
+```html
 <codice-modal [id]="'unId'" (cerrado)="modalCerrado()">
   <h1>Funciona!</h1>
 </codice-modal>
-
-
 ```
 
-Para llamarlo solo inyecta el servicio `ModalService` en tu componente. 
+Para llamarlo solo inyecta el servicio `ModalService` en tu componente.
 
-```javascript 
+```javascript
 
 idIdDelModal:string ="esteIdNoSeDebeRepetir"
 constructor(private modalService: ModalService ){}
@@ -48,7 +42,18 @@ constructor(private modalService: ModalService ){}
 
 Y ejecuta `modalService.open(elIdDelModal)`.
 
-
 Para cerrarlo ejecuta `modalService.close(idIdDelModal)`
 
+## Impedir que el usuario cierre el modal
 
+Se puede impedir que el usuario interactue con el modal y lo cierre agregando
+`[permitirCierreManual]="false"`
+
+```html
+
+<codice-modal [id]="'unId'" (cerrado)="modalCerrado()  [permitirCierreManual]="false" >
+  <h1>Funciona!</h1>
+</codice-modal>
+
+
+```
