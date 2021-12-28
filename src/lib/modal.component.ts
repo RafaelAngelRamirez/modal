@@ -73,7 +73,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   open(): void {
     this.element.style.display = "block"
     document.body.classList.add("codice-modal-open")
-    this.abierto.next()
+    this.abierto.next(null)
   }
 
   closeManual() {
@@ -84,6 +84,6 @@ export class ModalComponent implements OnInit, OnDestroy {
   close(): void {
     this.element.style.display = "none"
     document.body.classList.remove("codice-modal-open")
-    this.cerrado.next()
+    this.cerrado.next(null)
   }
 }
