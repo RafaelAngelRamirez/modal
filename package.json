@@ -1,6 +1,6 @@
 {
   "name": "@codice-progressio/modal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "peerDependencies": {
     "@angular/common": "~14.2.2",
     "@angular/core": "~14.2.2"
