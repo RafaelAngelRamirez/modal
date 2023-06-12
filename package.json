@@ -2,8 +2,8 @@
   "name": "@codice-progressio/modal",
   "version": "1.0.3",
   "peerDependencies": {
-    "@angular/common": "~14.2.2",
-    "@angular/core": "~14.2.2"
+    "@angular/common": "~16.0.5",
+    "@angular/core": "~16.0.5"
   },
   "dependencies": {
     "tslib": "^2.0.0"
@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "postversion": "rm -r dist; ng build modal --configuration production  && mkdir dist && cp -r ../../dist/modal/* dist/ ",
-    "publicar": "np --contents=./dist"
+    "publicar": "npx np --contents=./dist"
   },
   "repository": {
     "type": "git",
@@ -40,5 +40,9 @@
   "fesm2015": "./dist/fesm2015/codice-progressio-modal.js",
   "typings": "./dist/codice-progressio-modal.d.ts",
   "metadata": "./dist/codice-progressio-modal.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
